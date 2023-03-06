@@ -1,13 +1,7 @@
-// MathLibrary.h - Contains declarations of math functions
 #pragma once
 
-#ifdef MATHLIBRARY_EXPORTS
-#define MATHLIBRARY_API __declspec(dllexport)
-#define MATHLIBRARY_API_C_FUNCTION extern "C" __declspec(dllexport)
-#else
-#define MATHLIBRARY_API __declspec(dllimport)
-#define MATHLIBRARY_API_C_FUNCTION extern "C" __declspec(dllimport)
-#endif
+// On Linux, this is how we export functions
+#define MATHLIBRARY_API_C_FUNCTION extern "C" __attribute__ ((visibility ("default")))
 
 // The Fibonacci recurrence relation describes a sequence F
 // where F(n) is { n = 0, a
@@ -22,7 +16,7 @@
 // such that F(0) = a, F(1) = b.
 // This function must be called before any other function.
 MATHLIBRARY_API_C_FUNCTION void fibonacci_init(
-    const unsigned long long a, const unsigned long long b);
+  const unsigned long long a, const unsigned long long b);
 
 // Produce the next value in the sequence.
 // Returns true on success and updates current value and index;
@@ -36,3 +30,4 @@ MATHLIBRARY_API_C_FUNCTION unsigned long long fibonacci_current();
 MATHLIBRARY_API_C_FUNCTION unsigned fibonacci_index();
 
 MATHLIBRARY_API_C_FUNCTION int add(int a, int b);
+

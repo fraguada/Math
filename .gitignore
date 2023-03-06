@@ -1,3 +1,6 @@
-﻿.vs
+.vs
 obj
 MathLibrary/x64
+bin/
+AndroidMathApp/lib/arm64-v8a/libMathLibrary.so
+AndroidMathApp/lib/arm64-v8a/libMathLibrary.so.recipe
