@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net7.0-android</TargetFramework>
     <SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
@@ -11,6 +11,9 @@
     <BaseOutputPath>..\bin</BaseOutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MathCommonNetCore\MathCommonNetCore.csproj" />
+    <None Remove="lib\arm64-v8a\libMathLibrary.so" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MathCommonAndroid\MathCommonAndroid.csproj" />
   </ItemGroup>
 </Project>
